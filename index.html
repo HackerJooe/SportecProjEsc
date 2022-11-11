@@ -1,0 +1,279 @@
+<meta name="color-scheme" content="light"><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SPORTEC - Tecnologias Esportivas</title>
+    <link rel="stylesheet" href="./css/main.css" media="all">
+    <link rel="stylesheet" href="./css/mobileF.css" media="mobileF">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+</head>
+<body>
+
+                    <!--Barra Fixa de Navegação-->
+    <header>
+        <nav>
+            
+                <img id="img-logo" src="./img/logo1.png" alt="logo-sportec">
+
+                <div class="barnav">
+                    <ul>
+                    <li><button class="neon">Home</button></li>
+                    <li><button class="neon">Produtos</button></li>
+                    <li><button class="neon">Oportunidade</button></li>
+                    <li><button class="neon">Reclame Aqui</button></li>  
+                    <li><button class="neon">Login</button></li>
+                    <li><button class="neon">Cadastrar-se</button></li>
+                    <li><button id="style-button" onclick="switchTheme()">Trocar Tema</button></li>
+                    </ul> 
+                </div>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+                <div class="search_div">
+                    <input type="text" class="search_input" placeholder="Pesquise Aqui">
+                    <a href="#" class="search_button"><i class="fa-solid fa-magnifying-glass"></i></a>
+                </div>
+        </nav>
+    </header>
+    
+                    <!--Cabeçalho Home-Logo -->
+<hr>
+                    <!--Carrosel de Imagens-->
+<h2 class="modal">Modalidades</h2>
+<hr>
+    <section class="main" id="modal_scrool">
+                
+        <div class="swiper mySwiper container">
+            <div class="swiper-wrapper content">
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/ciclismo.jpg" class="sport" alt="Ciclismo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/boxe.jpg" class="sport" alt="Boxing">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/alpinismo.jpg" class="sport" alt="Alpinismo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/basquete.jpg" class="sport" alt="Basquete">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/volei.jpg" class="sport" alt="Volei">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/futebol.jpg" class="sport" alt="Futebol-de-Campo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/surfe.jpg" class="sport" alt="Surfe">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/musculacao.jpg" class="sport" alt="Musculacao">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/natacao.jpg" class="sport" alt="Natacao">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/tennis.jpg" class="sport" alt="Tennis">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/skate.jpg" class="sport" alt="Skate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide card">
+                    <div class="card-content">
+                        <div class="image">
+                            <img src="./img/fotAMERICAN.jpg" class="sport" alt="Futebol-Americano">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <hr>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </section>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" ></script>
+
+    <script>
+
+        var swiper = new Swiper(" .mySwiper", { 
+            slidesPerView:3,
+            spaceBetween:30,
+            slidesPerGroup:3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl:".swiper-button-next",
+                prevEl:".swiper-button-prev",
+            }
+        }
+        )
+        
+            function mostrar(){
+                for(var i=1;i<4;i++){
+                    document.getElementById("aba"+i).hidden = true;
+                }
+                var obj=event.target.dataset.nome;
+                document.getElementById(obj).hidden=false;
+            }
+            function inicia(){
+                for(var i=1;i<4;i++){
+                    document.getElementById("aba"+i).hidden = true;
+                }
+                document.getElementById("profile").addEventListener("click",mostrar);
+                document.getElementById("netw").addEventListener("click",mostrar);
+                document.getElementById("netw2").addEventListener("click",mostrar);
+                
+            }
+
+            document.documentElement.className = 'light';
+            var theme = "light";
+            function switchTheme(){
+                if(theme === 'dark'){
+                    document.documentElement.className = 'light';
+                    theme = 'light';
+                } else {
+                    document.documentElement.className = 'dark';
+                    theme = 'dark';
+                }
+
+            }
+            window.addEventListener("load",inicia);       
+        
+    </script>
+    <section>
+        <main class="card"> <!--Cartão-->
+            
+            <div class="content"> <!--Contéudo-->
+                <ul class="tabs"> <!--Abas-->
+                    <li class="tab" id="profile" data-nome="aba1" onclick="mostrar">
+                        <img src="./img/id.gif" alt="identity-profile" data-nome="aba1" onclick="mostrar"> <!--Imagem das abas-->
+                    </li>
+                    <li class="tab" id="netw" data-nome="aba2" onclick="mostrar">
+                        <img src="./img/heart.gif" alt="networks-to-contact" data-nome="aba2" onclick="mostrar"> <!--Imagem das abas-->
+                    </li>
+                    <li class="tab" id="netw2" data-nome="aba3" onclick="mostrar">
+                        <img src="./img/heart.gif" alt="networks-to-contact" data-nome="aba3" onclick="mostrar"> <!--Imagem das abas-->
+                    </li>
+                </ul>
+    
+                <div class="info-tabs"> <!--Informações das Abas-->
+                    <div class="information" id="aba1" >
+                        <h3 class="sub-title">Nossos Valores</h3> 
+    
+                        <div class="description">
+                            <p>Olá! Meu nome é Messias Paulino Junior, e sejam bem vindos(as) ao meu cartão de visita!</p>
+    
+                            <p>
+                                Sou uma pessoa guiada pela programação e procuro aplicar a programação em todos os passos e areas da vida, assim tambem acabo aprendendo bastante e sempre pensando fora da caixa. E procuro estudar afinco uma linguagem de cada vez, para assim ter um dominio mais preciso sobre elas, e atualmente ja possuo experiencia com <span>HTML, CSS e JavaScript</span>. Gosto muito de café, meus hobbies são acampar, praticar artes marciais, assistir animes e séries e adquirir conhecimento de programação.
+                            </p>
+                        </div>
+                    </div>
+    
+                    
+                    <div class="information" id="aba2"> 
+                        <h3 class="sub-title">Missão</h3>
+    
+                        <div class="description">
+    
+                            <p>
+                                Poison ivy grew through the fence they said was impenetrable. Don't put peanut butter on the dog's nose.
+
+                                As she walked along the street and looked in the gutter, she realized facemasks had become the new cigarette butts. She was disgusted he couldn’t tell the difference between lemonade and limeade. Pac-Man Namco Toru Iwatani Pac-Man Fever maze dots.
+                                
+                                He had a hidden stash underneath the floorboards in the back room of the house. Ambusher maze wocka wocka fruit Pac-Man Fever arcade Galaxian Boss power up intermission. Orange fickle blue guy maze chase. I think I will buy the red car, or I will lease the blue one. Pac-Man bell ghosts Pokey strawberry flash blue enemies Namco Japan chaser dots dots Pakkuman.
+                                
+                                Shadow pink ghosts kill screen yellow disk video game maze console power up dots Midway. Patricia loves the sound of nails strongly pressed against the chalkboard. Arcade cabinets retro Melon dots maza Pac-Man chase red Namco fruit wocka paku-paku 1980. Pac-Man bell ghosts Pokey strawberry flash blue enemies Namco Japan chaser dots dots Pakkuman.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="information" id="aba3"> 
+                        <h3 class="sub-title">Visão</h3>
+    
+                        <div class="description">
+    
+                            <p>
+                                The old apple revels in its authority. Clyde blue enemies flash dots wocka maze monsters ghosts red chaser. Poison ivy grew through the fence they said was impenetrable. I think I will buy the red car, or I will lease the blue one.
+
+She had the gift of being able to paint songs. Ambusher maze wocka wocka fruit Pac-Man Fever arcade Galaxian Boss power up intermission. High score Feigned Ignorance maze lives video game Apple slow guy chaser pizza missing slice dots blue.
+
+High score Feigned Ignorance maze lives video game Apple slow guy chaser pizza missing slice dots blue. Ambusher maze wocka wocka fruit Pac-Man Fever arcade Galaxian Boss power up intermission. He had a hidden stash underneath the floorboards in the back room of the house. Flying fish few by the space station. Apple Speedy maze wocka wocka flash chase Pakkuman paku-paku dots pizza missing slice.
+
+Poison ivy grew through the fence they said was impenetrable. Patricia loves the sound of nails strongly pressed against the chalkboard. Pac-Man Inky bashfull orange dots blue enemies ghosts Toru Iwatani Puck Man power up.
+                            </p>
+                        </div>
+                    </div>
+                    
+
+                </div>          
+            </div>   
+        </main>
+        
+    </section>
+
+</body>
+</html>
