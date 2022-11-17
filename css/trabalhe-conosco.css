@@ -61,14 +61,15 @@ textarea{
     width: 100%;
 }
 .inputBox input{
+    margin-bottom: 2px;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.7);
     background: rgb(50, 62, 85);
     border-radius: 5px;
     outline: none;
     color: #fff;
-    font-size: 1.9em;
+    font-size: 1.5em;
     transition: 0.5s;
 }
 .inputBox span {
@@ -76,7 +77,7 @@ textarea{
     left: 0;
     padding: 10px;
     pointer-events: none;
-    font-size: 1.5em;
+    font-size: 1.3em;
     letter-spacing: 0.2em;
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
@@ -89,15 +90,15 @@ textarea{
     font-size: 0.65em;
     padding: 0 1px;
     background: rgb(50, 62, 85);
-    border-left: 1px solid #75e44f;
-    border-right: 1px solid #75e44f;
+    border-left: 2px solid #75e44f;
+    border-right: 2px solid #75e44f;
     letter-spacing: 0.2em;
 }
 .inputBox:nth-child(2) input:valid ~ span,
 .inputBox:nth-child(2) input:focus ~ span{
     background: #75e44f;
     color: rgb(50, 62, 85);
-    border-radius: 2px;
+    border-radius: 5px;
 }
 .inputBox input:valid,
 .inputBox input:focus{

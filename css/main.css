@@ -1,3 +1,4 @@
+/* Reset de algumas configurações */
 *{
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body{
     color: var(--text-color);
     display: inline;
 }
-
+/* Modo LIGHT(CLARO) */
 .light{
     --bgColor: #fff;
     --text-color:#000;
@@ -20,6 +21,7 @@ body{
     --clr-btn: #020091;
     --hr-clr: #000;
 }
+/* Modo Dark(Escuro) */
 .dark{
     --bgColor: #26242e;
     --text-color:#fff;
@@ -34,15 +36,13 @@ nav{
     display: flex;
     left: 0;
     top: 0;
-    height: 100px;
+    height: 200px;
     width: 100%;
     z-index: 1;
     background-color: var(--bgColor); 
 }
 hr{
     margin-bottom: 0.2em;
-    color: var(--hr-clr);
-    accent-color: var(--hr-clr);
 }
 /*Alterado .barnav - add margin top*/
 .barnav{
@@ -70,50 +70,73 @@ hr{
     float: left;
     margin: 0 15px;
 }
-button{
+
+.btn{
     position: relative;
+    background: #393d3a;
+    color: #fff;
     border: none;
-    color: var(--clr-btn);
-    width: 9em;
-    height: 3em;
-    line-height: 2em;
-    text-align: center;
-    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-    background-size: 300%;
-    border-radius: 30px;
+    outline: none;
+    font-size: 18px;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    width: 250px;
+    height: 50px;
+    margin: 10px;
     cursor: pointer;
-    z-index: 1;
 }
-button:hover{
-    animation: animationbtn 8s linear infinite;
-    border: none;
+.btn:first-child:hover{
+    background: linear-gradient(90deg, #07a7f1, #fa46ac, #fae736, #07a7f1);
+    background-size: 400%;
 }
-@keyframes animationbtn{
-    0% { background-position: 0%; }
-    100% { background-position: 400%; }
+.btn:last-child:hover{
+    background: linear-gradient(90deg, #07a7f1, #fa46ac, #fae736, #07a7f1);
+    background-size: 400%;
 }
-button::before{
+.btn:first-child:before,
+.btn:last-child:before{
     content: "";
     position: absolute;
+    background: inherit;
     top: -5px;
-    left: -5px;
     right: -5px;
     bottom: -5px;
-    z-index: -1;
-    background: linear-gradient( 90deg,  #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-    background-size: 400%;
-    border-radius: 35px;
-    transition: 1s;
-}
-button:hover::before{
+    left: -5px;
+    border-radius: 50px;
     filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.btn:first-child:hover:before,
+.btn:last-child:hover:before{
+    opacity: 1;
+    z-index: -1;
+}
+.btn:hover{
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+@keyframes glow{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* Inicio da estilizacao, do botao de pesquisa */
 .search_div{
     margin-top: 2em;
-    position: relative;
+    position: absolute;
+    top: 15%;
+    left: 80%;
     background: var(--shadow-color);
     height: 40px;
     border-radius: 30px;
@@ -128,12 +151,12 @@ button:hover::before{
     color: var(--btn-search);
     font-size: 16px;
     transition: 0.4s;
-    line-height: 40px;
+    line-height: 10px;
     width: 0px;
 }
 .search_button{
     display: flex;
-    translate: -1% -23%; 
+    translate: -0% -25%; 
     justify-content: center;
     align-items: center;
     color: var(--btn-search);
@@ -152,20 +175,17 @@ button:hover::before{
 .search_div:hover > .search_button{
     background: var(--secbgColor);
 }
+
 .sport{
     width: 100%;
     height: 500px;
     border-radius: 2vw;
 }
-#logop{
-    margin: 1em;
-    width: 150px;
-    height: 150px;
-}
 h2{
     color: var(--text-color);
     text-align: center;
 }
+/* Começa aqui a estilazaçao dos containers de historia */
 .card .content{
     box-shadow: var(--shadow-color);
     background-color: red;
@@ -221,16 +241,13 @@ h2{
 .info-tabs .description span{
     color: #d0c202;
 }
-.information{
+.information{  /* responsaveis pelo container das informacoes da historia da empresa */
     display: flexbox;
     cursor: pointer;
 }
-.container1{
-    justify-content: center;
-    align-items: center;
-    margin: 2.5em;  
-}
-@media only screen and (min-width: 650px){
+
+/* Alteração de configuração para max-width */
+@media only screen and (max-width: 650px){
     body, html{
             width: 100vw;
             height: 100vh;
@@ -238,7 +255,7 @@ h2{
             background: var(--colorBgPrimary);
             }
         .light{
-            --colorBgPrimary: rgb(255, 5, 5);
+            --colorBgPrimary: rgb(255, 255, 255);
             --text-color:#000;
             --shadow-color:#bfbfbf;
             --secbgColor: #dbdbdb;
@@ -270,5 +287,9 @@ h2{
         .barnav ul li button{
             width: 2em;
             height: 2em;
+        }
+        .sport{
+            max-width: 650px;
+            max-height: auto;
         }
 }

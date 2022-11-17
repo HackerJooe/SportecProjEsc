@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>SPORTEC - Tecnologias Esportivas</title>
-    <link rel="stylesheet" href="./css/main.css" media="all">
-    <link rel="stylesheet" href="./css/mobileF.css" media="mobileF">
+    <link rel="stylesheet" href="./css/main.css" >
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     
 </head>
@@ -21,13 +20,13 @@
 
                 <div class="barnav">
                     <ul>
-                    <li><button class="neon">Home</button></li>
-                    <li><button class="neon">Produtos</button></li>
-                    <li><button class="neon">Oportunidade</button></li>
-                    <li><button class="neon">Reclame Aqui</button></li>  
-                    <li><button class="neon">Login</button></li>
-                    <li><button class="neon">Cadastrar-se</button></li>
-                    <li><button id="style-button" onclick="switchTheme()">Trocar Tema</button></li>
+                    <li><button class="btn"><a href="./index.html">Home</a></button></li>
+                    <li><button class="btn"><a href="">Produtos</a></button></li>
+                    <li><button class="btn"><a href="./index2.html">Oportunidade</a></button></li>
+                    <li><button class="btn"><a href="">Reclame Aqui</a></button></li>  
+                    <li><button class="btn"><a href="">Login</a></button></li>
+                    <li><button class="btn"><a href="">Cadastrar-se</a></button></li>
+                    <li><button class="btn" id="style-button" onclick="switchTheme()"><a href="">Trocar Tema</a></button></li>
                     </ul> 
                 </div>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -156,9 +155,9 @@
     <script>
 
         var swiper = new Swiper(" .mySwiper", { 
-            slidesPerView:3,
+            slidesPerView:1,
             spaceBetween:30,
-            slidesPerGroup:3,
+            slidesPerGroup:1,
             loop: true,
             loopFillGroupWithBlank: true,
             pagination: {
